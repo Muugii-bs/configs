@@ -11,4 +11,3 @@ mv vim ~/.vim
 mv vimrc ~/.vimrc
 cd ../../
 rm -rf configs
-
