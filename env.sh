@@ -11,3 +11,4 @@ mv vim ~/.vim
 mv vimrc ~/.vimrc
 cd ../../
 rm -rf configs
+rm -rf .git
