@@ -13,4 +13,4 @@ cd ../../
 rm -rf configs
 rm -rf .git
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer || sudo apt-get -y install build-essential cmake || sudo apt-get -y install build-essential cmake3 || ./install.py --clang-completer |
+./install.py --clang-completer || sudo apt-get -y install build-essential cmake || sudo apt-get -y install build-essential cmake3 || ./install.py --clang-completer
