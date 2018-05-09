@@ -7,12 +7,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible' 
+Plug 'tpope/vim-sensible'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'mattn/emmet-vim'
 Plug 'vim-syntastic/syntastic'
@@ -20,9 +20,12 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi'
+" Plug 'vim-scripts/pythoncomplete'
+" Plug 'davidhalter/jedi-vim'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -98,7 +101,7 @@ au BufNewFile,BufRead *.tex
 au BufNewFile,BufRead *.txt
     \ setlocal spell |
     \ setlocal spell spelllang=en_us |
-hi clear SpellBad 
+hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
 
 " airline settings
@@ -116,10 +119,10 @@ set backspace=indent,eol,start
 " js stuff
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
-" python stuff 
+" python stuff
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-" syntastic settings 
+" syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -127,3 +130,5 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:jedi#force_py_version = 3
