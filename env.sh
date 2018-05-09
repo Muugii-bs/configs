@@ -1,14 +1,35 @@
+# ZSH INSTALL 
 sudo apt-get -y update
 sudo apt-get -y install zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# GIT & VIM CONFIGS
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+{
+  brew install neovim
+} || {
+  sudo apt-get install software-properties-common
+  sudo apt-get install python-software-properties 
+  sudo add-apt-repository ppa:neovim-ppa/stable
+  sudo apt-get update
+  sudo apt-get install neovim
+  sudo apt-get install python-dev python-pip python3-dev python3-pip
+}
+
 git clone https://github.com/Muugii-bs/configs.git
 cd configs
+
+# Copy config files
 mv gitconfig ~/.gitconfig
 git checkout -b vim-full origin/vim-full-config
 cd vim-full-config
 rm -rf ~/.vim
 mv vim ~/.vim
 mv vimrc ~/.vimrc
+
+mkdir ~/.config/nvim 
+mv init.vim ~/.config/nvim/
+cp -r ~/.vim/colors ~/.config/nvim/ 
 cd ../../
 rm -rf configs
 rm -rf .git
