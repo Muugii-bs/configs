@@ -83,7 +83,7 @@ set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
 " colorscheme settings
 set background=dark
-set term=xterm-256color
+" set term=xterm-256color
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
