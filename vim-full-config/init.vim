@@ -20,12 +20,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi'
-" Plug 'vim-scripts/pythoncomplete'
-" Plug 'davidhalter/jedi-vim'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -66,6 +61,10 @@ set hlsearch
 set clipboard=unnamed
 set cursorline
 let python_highlight_all=1
+
+" terminal mode
+tnoremap <silent> <ESC> <C-\><C-n>
+set sh=zsh
 
 " tab settings
 au BufNewFile,BufRead *.py
@@ -130,5 +129,3 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-let g:jedi#force_py_version = 3
