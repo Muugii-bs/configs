@@ -8,8 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir docker_machine virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status host root_indicator background_jobs history date time)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
