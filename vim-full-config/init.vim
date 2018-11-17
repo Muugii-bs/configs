@@ -64,6 +64,7 @@ set hlsearch
 set clipboard=unnamed
 set cursorline
 let python_highlight_all=1
+set tags=tags
 
 " terminal mode
 tnoremap <silent> <ESC> <C-\><C-n>
