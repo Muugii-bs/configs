@@ -12,6 +12,7 @@ set laststatus=2
 set hlsearch
 set clipboard=unnamed
 let python_highlight_all=1
+set tags=tags
 
 " tab settings
 au BufNewFile,BufRead *.py
