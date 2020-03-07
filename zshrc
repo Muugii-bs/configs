@@ -99,4 +99,3 @@ alias ll='ls -laht'
 alias vi='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
