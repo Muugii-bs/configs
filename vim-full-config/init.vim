@@ -1,7 +1,6 @@
 "========================================"
 "=============== PLUGINS ================"
 "========================================"
-
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -42,8 +41,26 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " GraphQL
 Plug 'jparise/vim-graphql'
 
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
+" CoC
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <silent><expr> <C-space> coc#refresh()
+
+"GoTo code navigation
+nmap <leader>g <C-o>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <leader>rn <Plug>(coc-rename)
+
+"show all diagnostics.
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+"manage extensions.
+nnoremap <silent> <space>e :<C-u>CocList extensions<cr>
 
 " Initialize plugin system
 call plug#end()
@@ -59,18 +76,21 @@ syntax on
 set number
 syntax enable
 filetype plugin indent on
-set laststatus=2
+" set laststatus=2
 set hlsearch
 set clipboard=unnamed
 set cursorline
 let python_highlight_all=1
-set tags=tags
 
 " terminal mode
 tnoremap <silent> <ESC> <C-\><C-n>
 set sh=zsh
 
 " tab settings
+au BufNewFile,BufRead *.js, *.html, *.css, *.json
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
 au BufNewFile,BufRead *.py
     \ set tabstop=8 |
     \ set shiftwidth=4 |
@@ -78,14 +98,10 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set smartindent |
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
 
 " encoding settings
 set encoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 
 " colorscheme settings
 set background=dark
@@ -93,7 +109,7 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme hybrid
+colorscheme iceberg
 
 set foldmethod=marker
 
@@ -134,7 +150,5 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" NERDTree
-let g:NERDTreeWinSize=25
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
